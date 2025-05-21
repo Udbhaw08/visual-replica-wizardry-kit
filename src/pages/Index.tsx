@@ -7,14 +7,15 @@ import TrackPanel from '../components/TrackPanel';
 import VehiclePanel from '../components/VehiclePanel';
 import MapOverlay from '../components/MapOverlay';
 
+// Define the convoyData with explicit status values that match the ConvoyProps type
 const convoyData = [
-  { id: 'TL-15B-756', mission: 'TCPS', status: 'On Time' },
-  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' },
-  { id: 'TL-4E-8', mission: 'TCPS', status: 'Delayed' },
-  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' },
-  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' },
-  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' },
-  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' },
+  { id: 'TL-15B-756', mission: 'TCPS', status: 'On Time' as const },
+  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' as const },
+  { id: 'TL-4E-8', mission: 'TCPS', status: 'Delayed' as const },
+  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' as const },
+  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' as const },
+  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' as const },
+  { id: 'TL-15B-746', mission: 'TCPS', status: 'On Time' as const },
 ];
 
 const Index: React.FC = () => {
