@@ -9,16 +9,16 @@ interface ConvoyProps {
 
 const Convoy: React.FC<ConvoyProps> = ({ id, mission, status }) => {
   return (
-    <div className="bg-hyper-panel-darker rounded border border-hyper-panel-border px-2 py-1.5 mb-2">
-      <div className="flex justify-between">
-        <div className="text-sm font-medium">Convoy: {id}</div>
-      </div>
-      <div className="text-xs text-gray-300">Mission: {mission}</div>
-      <div className="flex items-center text-xs">
-        <span>Status: </span>
-        <div className="flex items-center ml-1">
-          <span className={`status-dot ${status === 'On Time' ? 'on-time' : 'delayed'}`}></span>
-          <span>{status}</span>
+    <div className="bg-[#14232B] rounded border border-gray-700 mb-2 overflow-hidden">
+      <div className="px-3 py-2">
+        <div className="text-sm font-medium text-white">Convoy: {id}</div>
+        <div className="text-xs text-gray-400">Motor + {mission}</div>
+        <div className="flex items-center justify-between mt-1">
+          <span className="text-xs text-gray-400">Status</span>
+          <div className="flex items-center">
+            <span className={`w-2.5 h-2.5 rounded-full mr-1.5 ${status === 'On Time' ? 'bg-green-500' : 'bg-orange-500'}`}></span>
+            <span className={`text-xs ${status === 'On Time' ? 'text-green-500' : 'text-orange-500'}`}>{status}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -31,16 +31,14 @@ interface TrackPanelProps {
 
 const TrackPanel: React.FC<TrackPanelProps> = ({ convoys }) => {
   return (
-    <div className="bg-hyper-panel-bg border border-hyper-panel-border rounded-sm overflow-hidden w-full max-h-full">
-      <div className="route-panel-header">
-        <span className="font-semibold">Tracks</span>
-        <div className="ml-auto">
-          <svg className="w-4 h-4 text-gray-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
+    <div className="h-full flex flex-col">
+      <div className="bg-[#121920] border-b border-gray-800 h-10 flex items-center px-4 justify-between">
+        <span className="font-medium text-white">Tracks</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
       </div>
-      <div className="p-2 overflow-y-auto max-h-[calc(100vh-12rem)]">
+      <div className="p-3 overflow-y-auto flex-1">
         {convoys.map((convoy) => (
           <Convoy 
             key={convoy.id}

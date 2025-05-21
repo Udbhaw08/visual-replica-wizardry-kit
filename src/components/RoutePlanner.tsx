@@ -7,39 +7,54 @@ interface RoutePlannerProps {
 
 const RoutePlanner: React.FC<RoutePlannerProps> = ({ active = false }) => {
   return (
-    <div className="bg-hyper-panel-bg border border-hyper-panel-border rounded-sm overflow-hidden w-full">
-      <div className="route-panel-header">
-        <div className="w-7 h-7 bg-gray-700 rounded mr-2 flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 20L3 17V7L9 4M9 20L15 17M9 20V4M15 17L21 20V10L15 7M15 17V7M9 4L15 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+    <div className="bg-[#0B1015] overflow-hidden w-full">
+      <div className="bg-[#121920] border-b border-gray-800 h-10 flex items-center px-4">
+        <div className="h-7 w-7 bg-black rounded flex items-center justify-center mr-2">
+          <span className="text-white font-bold">H</span>
         </div>
-        <span className="font-semibold">Route Planner</span>
+        <span className="font-medium text-white">Route Planner</span>
         <div className="ml-auto">
-          <span className={`status-dot ${active ? 'on-time' : ''}`}></span>
+          <span className={`w-2.5 h-2.5 rounded-full inline-block ${active ? 'bg-green-500' : ''}`}></span>
         </div>
       </div>
 
-      <div className="p-3 space-y-4">
+      <div className="p-4 space-y-4">
         <div>
-          <label className="text-gray-300 text-sm block mb-1">Origin</label>
-          <div className="bg-hyper-panel-darker rounded p-2 border border-hyper-panel-border">
-            <select className="bg-hyper-panel-darker text-white w-full text-sm border-none outline-none">
-              <option>Hoth</option>
-            </select>
+          <label className="text-gray-400 text-sm block mb-2">Origin</label>
+          <div className="bg-[#121920] rounded border border-gray-700 p-2">
+            <input 
+              type="text" 
+              className="bg-transparent text-white w-full text-sm border-none outline-none" 
+              placeholder="" 
+            />
           </div>
         </div>
 
         <div>
-          <label className="text-gray-300 text-sm block mb-1">Destination</label>
-          <div className="bg-hyper-panel-darker rounded p-2 border border-hyper-panel-border">
-            <input type="text" placeholder="Enter destination" className="bg-transparent text-white w-full text-sm border-none outline-none" />
+          <div className="flex items-center">
+            <div className="w-full">
+              <select className="appearance-none bg-[#121920] text-white w-full text-sm p-2 border border-gray-700 rounded outline-none">
+                <option>Halts</option>
+              </select>
+            </div>
+            <div className="pointer-events-none absolute flex items-center px-2 text-gray-400 right-8">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+              </svg>
+            </div>
           </div>
         </div>
 
-        <button className="w-full bg-hyper-orange text-black font-semibold py-2 rounded text-center mt-4">
-          Generate Plan
-        </button>
+        <div>
+          <label className="text-gray-400 text-sm block mb-2">Destination</label>
+          <div className="bg-[#121920] rounded border border-gray-700 p-2">
+            <input 
+              type="text" 
+              className="bg-transparent text-white w-full text-sm border-none outline-none" 
+              placeholder="" 
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
