@@ -1,13 +1,7 @@
 
 import React from 'react';
 
-interface ResourcePanelProps {
-  title: string;
-  active?: boolean;
-  warning?: boolean;
-}
-
-const ResourcePanel: React.FC<ResourcePanelProps> = ({ title, active = false, warning = false }) => {
+const ResourcePanel = ({ title, active = false, warning = false }) => {
   return (
     <div className="bg-[#0B1015] overflow-hidden w-full border-b border-gray-800">
       <div className="h-10 flex items-center px-4">

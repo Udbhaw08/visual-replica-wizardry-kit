@@ -1,13 +1,7 @@
 
 import React from 'react';
 
-interface ConvoyProps {
-  id: string;
-  mission: string;
-  status: 'On Time' | 'Delayed';
-}
-
-const Convoy: React.FC<ConvoyProps> = ({ id, mission, status }) => {
+const Convoy = ({ id, mission, status }) => {
   return (
     <div className="bg-[#14232B] rounded border border-gray-700 mb-2 overflow-hidden">
       <div className="px-3 py-2">
@@ -25,11 +19,7 @@ const Convoy: React.FC<ConvoyProps> = ({ id, mission, status }) => {
   );
 };
 
-interface TrackPanelProps {
-  convoys: ConvoyProps[];
-}
-
-const TrackPanel: React.FC<TrackPanelProps> = ({ convoys }) => {
+const TrackPanel = ({ convoys }) => {
   return (
     <div className="h-full flex flex-col">
       <div className="bg-[#121920] border-b border-gray-800 h-10 flex items-center px-4 justify-between">

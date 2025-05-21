@@ -1,11 +1,7 @@
 
 import React from 'react';
 
-interface RoutePlannerProps {
-  active?: boolean;
-}
-
-const RoutePlanner: React.FC<RoutePlannerProps> = ({ active = false }) => {
+const RoutePlanner = ({ active = false }) => {
   return (
     <div className="bg-[#0B1015] overflow-hidden w-full">
       <div className="bg-[#121920] border-b border-gray-800 h-10 flex items-center px-4">

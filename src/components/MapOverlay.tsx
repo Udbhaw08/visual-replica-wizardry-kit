@@ -2,7 +2,7 @@
 import React from 'react';
 import { ZoomIn, ZoomOut } from 'lucide-react';
 
-const MapOverlay: React.FC = () => {
+const MapOverlay = () => {
   // This component represents any overlays on the map, not including verification popups
   return (
     <div className="relative w-full h-full">
